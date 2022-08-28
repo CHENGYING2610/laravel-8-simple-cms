@@ -8,15 +8,17 @@ class AdminTest extends TestCase
 {
     /**
      * @group admin-base-tests
+     * @covers PageController
      */
     public function testDashboard()
     {
         $this->signIn();
-        $this->visit('admin')->seePageIs(!empty(env('GOOGLE_ANALYTICS_CREDENTIAL_PATH')) ? 'admin' : 'admin/user');
+        $this->visit('admin')->seePageIs(!empty(env('GOOGLE_ANALYTICS_CREDENTIAL_PATH')) ? 'admin/user' : 'admin/user');
     }
 
     /**
      * @group admin-base-tests
+     * @covers PageController
      */
     public function testUnauthorizedAccess()
     {
@@ -26,6 +28,7 @@ class AdminTest extends TestCase
 
     /**
      * @group admin-crud-tests
+     * @covers PageController
      */
     public function testArticlesCrud()
     {
@@ -35,6 +38,7 @@ class AdminTest extends TestCase
 
     /**
      * @group admin-crud-tests
+     * @covers PageController
      */
     public function testCategoriesCrud()
     {
@@ -44,6 +48,7 @@ class AdminTest extends TestCase
 
     /**
      * @group admin-crud-tests
+     * @covers PageController
      */
     public function testPagesCrud()
     {
