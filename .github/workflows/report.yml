@@ -18,7 +18,7 @@ jobs:
          bootstrap: vendor/autoload.php
          configuration: phpunit.xml
          php_extensions: xdebug
-         args: phpunit --coverage-html report
+         args: --coverage-html report
 
      - name: Upload to Codecov
        uses: codecov/codecov-action@v2
